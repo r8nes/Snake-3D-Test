@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SnakeInput : MonoBehaviour
 {
-    [SerializeField] private int _direction;
+    private int _direction;
 
     public static event Action<int> OnMove;
 

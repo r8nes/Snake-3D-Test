@@ -11,11 +11,9 @@ public class CameraFollower : MonoBehaviour
     {
         _offset = transform.position -_snake.position;       
     }
-
     private void FixedUpdate()
     {
-        Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, _snake.position.z + _offset.z);
-        
+        Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, _snake.position.z + _offset.z);     
         transform.position = newPosition;
     }
 }
