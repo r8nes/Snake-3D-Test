@@ -5,19 +5,30 @@ using UnityEngine;
 
 public class SnakeInput : MonoBehaviour
 {
-    private int _direction;
-
-    public static event Action<int> OnMove;
+    public static event Action<Vector3> OnMove;
 
     private void Update()
     {
-        _direction = 0;
-
-        if (Input.GetMouseButton(0))
+#if UNITY_ANDROID
+        GetTouchPosition();
+#endif
+    }
+    private void GetTouchPosition()
+    {
+        if (Input.touchCount > 0)
         {
-           Vector3 viewPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-            _direction = viewPosition.x > 0.5 ? 1 : -1;
+            Touch touch = Input.GetTouch(0);
+
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                OnMove?.Invoke(hit.point);
+            }
+            Debug.DrawRay(ray.origin, ray.direction * 100, Color.black);
         }
-            OnMove?.Invoke(_direction);
     }
 }
+
+

@@ -12,7 +12,7 @@ public class TailGeneration : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            tail.Add(Instantiate(_segmentTamplate, transform));
+            tail.Add(Instantiate(_segmentTamplate, transform.position, Quaternion.identity, transform));
         }
         return tail;
     }

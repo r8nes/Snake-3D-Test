@@ -293,13 +293,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.40601146, y: -0.06634465, z: 0.031129882, w: 0.91092485}
-  m_LocalPosition: {x: 0.7, y: 12.02, z: -7.62}
+  m_LocalRotation: {x: 0.3807886, y: -0.05375752, z: 0.03571219, w: 0.92240703}
+  m_LocalPosition: {x: 0.52, y: 8.12, z: -9.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 48.058, y: -8.223, z: 0.244}
+  m_LocalEulerAnglesHint: {x: 44.937, y: -5.836, z: 2.019}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,10 +363,10 @@ GameObject:
   - component: {fileID: 1789025050}
   - component: {fileID: 1789025049}
   - component: {fileID: 1789025054}
-  - component: {fileID: 1789025055}
   - component: {fileID: 1789025056}
   - component: {fileID: 1789025048}
   - component: {fileID: 1789025053}
+  - component: {fileID: 1789025055}
   - component: {fileID: 1789025057}
   m_Layer: 0
   m_Name: SnakeHead
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad2b3e2bceb9984bb7d8b4565dbaa40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sensevity: 1
+  _speed: 2
 --- !u!135 &1789025049
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -458,8 +458,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789025047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.99, z: -3.78}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -490,7 +490,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1789025055
 MonoBehaviour:
@@ -501,10 +501,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1789025047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a6801597700ff4bac0cffb7c3d80fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 72bf47b28f13e1e43853237374b7be05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _segmentTamplate: {fileID: 7473980789875396849, guid: bb9e9e55838e8aa4b85ace6b715f3a8d, type: 3}
+  _springless: 0
 --- !u!114 &1789025056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,12 +526,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1789025047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca72367bb5a964b4bb3672153a194fe1, type: 3}
+  m_Script: {fileID: 11500000, guid: d0a6801597700ff4bac0cffb7c3d80fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tailSpringness: 3
-  _tailSize: 1
-  _snakeMovement: {fileID: 0}
+  _segmentTamplate: {fileID: 7473980789875396849, guid: bb9e9e55838e8aa4b85ace6b715f3a8d, type: 3}
 --- !u!1 &1885678324
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,22 +612,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1696296863}
     m_Modifications:
-    - target: {fileID: 68527263045009351, guid: fd25c0c7679bf6541b756befe8cef5e3, type: 3}
-      propertyPath: m_Size.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 68527263045009351, guid: fd25c0c7679bf6541b756befe8cef5e3, type: 3}
-      propertyPath: m_Center.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181652368090531981, guid: fd25c0c7679bf6541b756befe8cef5e3, type: 3}
-      propertyPath: m_Size.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181652368090531981, guid: fd25c0c7679bf6541b756befe8cef5e3, type: 3}
-      propertyPath: m_Center.y
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7923626752114535090, guid: fd25c0c7679bf6541b756befe8cef5e3, type: 3}
       propertyPath: m_Name
       value: Platform
