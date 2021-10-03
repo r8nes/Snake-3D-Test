@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plarform : MonoBehaviour
+public interface IInteractable
 {
+    public int Collect();
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +11,7 @@ public class TailGeneration : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
+            _segmentTamplate.GetComponent<Rigidbody>();
             tail.Add(Instantiate(_segmentTamplate, transform.position, Quaternion.identity, transform));
         }
         return tail;

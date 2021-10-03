@@ -7,9 +7,9 @@ public class PlatformSpawner : MonoBehaviour
     [SerializeField] private GameObject _platform;
     [SerializeField] private Transform _generationPoint;
     
-    private float _platformLength;
+    private float _platformLength;  
 
-    private void Start()
+    private void Awake()
     {
         _platformLength = _platform.transform.localScale.z;
     }

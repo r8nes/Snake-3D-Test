@@ -7,6 +7,7 @@ public class SnakeMovement : MonoBehaviour
     [SerializeField] private float _speed;
     
     private Vector3 _directionX;
+    private float _lerpStabilization = 6f;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class SnakeMovement : MonoBehaviour
     public void MovePositionX() 
     {
         Vector3 direction = (_directionX - _rigidbody.position);
-        Vector3 lerpPosition = Vector3.Lerp(_rigidbody.position, direction * 6f, _speed * Time.fixedDeltaTime);
+        Vector3 lerpPosition = Vector3.Lerp(_rigidbody.position, direction * _lerpStabilization, _speed * Time.fixedDeltaTime);
         Vector3 moveX = new Vector3(lerpPosition.x,_rigidbody.position.y, _rigidbody.position.z);
         _rigidbody.MovePosition(moveX);
     }
