@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Food : MonoBehaviour
+public class Diamond : MonoBehaviour
 {
-   [SerializeField] private int _bonusSize;
+    private int _value = 1;
 
     public int Collect()
     {
         Destroy(gameObject);
-        return _bonusSize;
+        return _value;
     }
 }

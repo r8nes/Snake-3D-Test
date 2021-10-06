@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18aa6b098b55eb44585974cded659613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 817478144678320821, guid: a98ee685083d9554f90ba062b361ae95, type: 3}
+  _foodPrefab: {fileID: 255659114517744594, guid: a98ee685083d9554f90ba062b361ae95, type: 3}
   _elementsSizeRange: {x: 1, y: 5}

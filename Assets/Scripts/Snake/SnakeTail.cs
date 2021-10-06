@@ -9,7 +9,8 @@ public class SnakeTail : MonoBehaviour
 
     [SerializeField] private int _startTailCount;
     [SerializeField] private float _springless;
-    private void Start()
+
+    private void  Awake()
     {
         _tailGenerator = GetComponent<TailGeneration>();
         _tailList = _tailGenerator.Generate(_startTailCount);
@@ -42,13 +43,23 @@ public class SnakeTail : MonoBehaviour
         _tailList.AddRange(_tailGenerator.Generate(bonusSize));
     }
 
+    private void OnColorChanged(Color newColor)
+    {
+        foreach (var segment in _tailList)
+        {
+            segment.GetComponent<MeshRenderer>().material.color = newColor;
+        }
+    }
+
     private void OnEnable()
     {
-        SnakeHead.BonusCollected += OnBonusCollected;
+        SnakeHead.SegmentCollected += OnBonusCollected;
+        SnakeHead.ColorUpdated += OnColorChanged;
     }
 
     private void OnDisable()
     {
-        SnakeHead.BonusCollected += OnBonusCollected;
+        SnakeHead.SegmentCollected -= OnBonusCollected;
+        SnakeHead.ColorUpdated -= OnColorChanged;
     }
 }
