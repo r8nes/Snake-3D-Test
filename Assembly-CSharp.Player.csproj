@@ -56,15 +56,47 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Snake\SnakeHead.cs" />
-    <Compile Include="Assets\Scripts\Snake\SnakeInput.cs" />
-    <Compile Include="Assets\Scripts\Snake\Snake.cs" />
-    <Compile Include="Assets\Scripts\PlatformSpawner.cs" />
+    <Compile Include="Assets\Scripts\Obstacles\Food.cs" />
+    <Compile Include="Assets\Scripts\Snake\SnakeSizeUpdate.cs" />
+    <Compile Include="Assets\Scripts\DiamondScore.cs" />
+    <Compile Include="Assets\Scripts\GameReloader.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\FPSUI.cs" />
     <Compile Include="Assets\Scripts\CameraFollower.cs" />
-    <Compile Include="Assets\Scripts\Snake\SnakeMovement.cs" />
-    <Compile Include="Assets\Scripts\Snake\SnakeTail.cs" />
-    <Compile Include="Assets\Scripts\Snake\Segment.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\AnimationStarter.cs" />
+    <Compile Include="Assets\Scripts\Platform\ElementSpawner.cs" />
     <Compile Include="Assets\Scripts\Snake\TailGeneration.cs" />
+    <Compile Include="Assets\Scripts\Obstacles\Diamond.cs" />
+    <Compile Include="Assets\Scripts\Snake\SnakeCore.cs" />
+    <Compile Include="Assets\Scripts\Obstacles\Obstacle.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterMaterialSwitcher.cs" />
+    <Compile Include="Assets\Scripts\ColorChanger.cs" />
+    <Compile Include="Assets\Scripts\Snake\Segment.cs" />
+    <Compile Include="Assets\Scripts\Platform\PlatformSpawner.cs" />
+    <Compile Include="Assets\Scripts\Obstacles\FoodGenerator.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\CameraDepthSlider.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\FPSCounter.cs" />
+    <Compile Include="Assets\Scripts\Snake\SnakeMovement.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\CameraRotator.cs" />
+    <Compile Include="Assets\Scripts\ColorUtility.cs" />
+    <Compile Include="Assets\Scripts\Snake\SnakeTail.cs" />
+    <Compile Include="Assets\Scripts\Snake\SnakeHead.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterArea.cs" />
+    <Compile Include="Assets\Scripts\Obstacles\IInteractable.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\TouchRotator.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterPropertyBlockSetter.cs" />
+    <Compile Include="Assets\Scripts\Snake\SnakeInput.cs" />
+    <Compile Include="Assets\Scripts\Snake\SnakeMouth.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\MobileDepthWater\Shaders\WaterTwoSide\Height\DiffuseColorHeightWaterTwoSide.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\DiffuseWaterOpaque.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterTwoSide\Depth\DiffuseColorDepthWaterTwoSide.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterTwoSide\Depth\DiffuseDepthWaterTwoSide.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\Height\DiffuseHeightWater.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterTwoSide\Height\DiffuseHeightWaterTwoSide.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\Depth\DiffuseDepthWater.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\Height\DiffuseColorHeightWater.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\Depth\DiffuseColorDepthWater.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -256,14 +288,23 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -273,6 +314,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.DeviceSimulator.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\AOT\Newtonsoft.Json.dll</HintPath>
@@ -627,6 +671,9 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>

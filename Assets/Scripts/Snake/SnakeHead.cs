@@ -71,7 +71,7 @@ public class SnakeHead : MonoBehaviour
                 break;
 
             case true:
-                if (other.TryGetComponent(out ColorChanger colorChange_1) == false)
+                if (colorChange == false)
                 {
                     Destroy(other.gameObject);
                 }
